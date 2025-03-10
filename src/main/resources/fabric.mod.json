@@ -1,0 +1,45 @@
+{
+	"accessWidener":"named.accesswidener",
+	"schemaVersion": 1,
+	"id": "deepernether",
+	"version": "${version}",
+	"name": "DeeperNether",
+	"description": "将下界高度修改为-96~351。刷怪特性部分保留，在Y=0刷怪最快，Y<0不刷怪。",
+	"authors": [
+		"Zaiyuyou"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/deepernether/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"deepernether.DeeperNether"
+		],
+		"client": [
+			"deepernether.DeeperNetherClient"
+		],
+		"fabric-datagen": [
+			"deepernether.DeeperNetherDataGenerator"
+		]
+	},
+	"mixins": [
+		"deepernether.mixins.json",
+		{
+			"config": "deepernether.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
